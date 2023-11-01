@@ -4,7 +4,7 @@ const newsContainer = document.getElementById("news-container");
 
 categorySelect.addEventListener("change", function() {
     const category = categorySelect.value;
-    const categoryUrl = apiUrl + "&categories=" + category;
+    const categoryUrl = "http://api.mediastack.com/v1/news?access_key=caac4b704a322973810960c541fa1e0c&languages=en&limit=5&categories=" + category;
     fetchNews(categoryUrl);
 });
 
