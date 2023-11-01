@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>FAQ</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <div class="accordion-item">
+                <h2>
+                    <button type="button">
+                        Question #1
+                    </button>
+                </h2>
+                <div>
+                    <div class="accordion-body">
+                        <strong>Halaman ini digunakan untuk apa?</strong> Halaman FAQ (Frequently Asked Questions) digunakan 
+                        untuk memberikan jawaban singkat dan jelas terhadap pertanyaan-pertanyaan yang sering diajukan oleh 
+                        pengguna atau pelanggan tentang suatu produk, layanan, atau topik tertentu. Ini membantu mengurangi beban 
+                        pertanyaan berulang dan memberikan informasi yang diperlukan dengan cepat.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2>
+                    <button type="button">
+                        Question #2
+                    </button>
+                </h2>
+                <div>
+                    <div class="accordion-body">
+                        <strong>Apa itu API?</strong> API (Application Programming Interface) adalah seperangkat aturan dan protokol 
+                        yang memungkinkan berbagai perangkat lunak atau aplikasi untuk berkomunikasi dan berinteraksi satu sama lain. 
+                        Ini memungkinkan pengembang untuk mengintegrasikan fungsi atau data dari satu aplikasi ke dalam yang lain.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2>
+                    <button type="button">
+                        Question #3
+                    </button>
+                </h2>
+                <div>
+                    <div class="accordion-body">
+                        <strong>API apa yang digunakan dalam aplikasi ini?</strong> Pada aplikasi ini, API yang digunakan adalah Mapbox 
+                        untuk pemetaan dan informasi lokasi dalam aplikasi ini, Weatherstack untuk informasi cuaca, dan Mediastack untuk 
+                        konten media dan berita.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2>
+                    <button type="button">
+                        Question #4
+                    </button>
+                </h2>
+                <div>
+                    <div class="accordion-body">
+                        <strong>Salah satu pola arsitektur API adalah RESTful.</strong> RESTful (Representational State Transfer) 
+                        adalah salah satu pola arsitektur API yang populer dan umum digunakan. Pola ini berfokus pada sederhana dan 
+                        konsisten dalam berkomunikasi melalui protokol HTTP dengan menggunakan metode HTTP seperti GET, POST, PUT, dan 
+                        DELETE untuk mengelola sumber daya secara terstruktur. RESTful API biasanya digunakan dalam pengembangan web dan 
+                        memiliki prinsip-prinsip desain yang dapat memudahkan integrasi dan interaksi antara sistem-sistem yang berbeda.
+                        <img src="/img/rest.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        {{>footer}}
+    </body>
+</html>

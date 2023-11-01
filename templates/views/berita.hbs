@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+        <div>
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+                <option value="general">General</option>
+                <option value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="health">Health</option>
+                <option value="science">Science</option>
+                <option value="sports">Sports</option>
+                <option value="technology">Technology</option>
+            </select>
+        </div>
+        <div id="news-container"></div>
+
+        <script>
+            var apiUrl = "http://api.mediastack.com/v1/news?access_key=caac4b704a322973810960c541fa1e0c&languages=en&countries=id&limit=5";
+
+            document.getElementById("category").addEventListener("change", function() {
+                var category = document.getElementById("category").value;
+                apiUrl = "http://api.mediastack.com/v1/news?access_key=caac4b704a322973810960c541fa1e0c&languages=en&limit=5&categories=" + category;
+                fetchNews();
+            });
+
+            function fetchNews() {
+                fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.data) {
+                        var articles = data.data;
+                        var newsContainer = document.getElementById("news-container");
+                        newsContainer.innerHTML = "";
+
+                        for (var i = 0; i < articles.length; i++) {
+                            var article = articles[i];
+                            var newsCard = document.createElement("div");
+                            newsCard.classList.add("news-card");
+                            var img = document.createElement("img");
+                            img.src = article.image;
+                            var h2 = document.createElement("h2");
+                            h2.textContent = article.title;
+                            var p = document.createElement("p");
+                            p.textContent = article.description;
+                            var a = document.createElement("a");
+                            a.href = article.url;
+                            a.textContent = "Read more";
+                            newsCard.appendChild(img);
+                            newsCard.appendChild(h2);
+                            newsCard.appendChild(p);
+                            newsCard.appendChild(a);
+                            newsContainer.appendChild(newsCard);
+                        }
+                    } else {
+                        console.log("Error: Invalid data");
+                    }
+                })
+                .catch(error => console.log(error));
+            }
+
+            fetchNews();
+        </script>
+    </div>
+    {{>footer}}
+</body>
+</html>
